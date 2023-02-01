@@ -153,7 +153,7 @@ export default class PlayingScene extends Phaser.Scene {
                 let content = this.getChildByName('content').value;
                 console.log(obj.getCenter().x,obj.getCenter().y, post_id)
 
-                axios.post('http://localhost:7777/marker/new/talk' ,{
+                axios.post('http://10.188.191.212:7777/marker/new/talk' ,{
                     "id" : post_id,
                     "point" : {
                         "x" : obj.getCenter().x,
@@ -204,7 +204,7 @@ export default class PlayingScene extends Phaser.Scene {
                 let inputPassword = this.getChildByName('password').value;
                 console.log(inputUsername,inputPassword)
                 let authentication = false;
-                axios.post('http://localhost:7777/auth/login' ,{
+                axios.post('http://10.188.191.212:7777/auth/login' ,{
                     "id" : inputUsername,
                     "password" : inputPassword
                 },{
@@ -274,7 +274,7 @@ export default class PlayingScene extends Phaser.Scene {
     }
 
     loadObjects(){
-         axios.get('http://localhost:7777/buildings' ,
+         axios.get('http://10.188.191.212:7777/buildings' ,
          {'Access-Control-Allow-Credentials': '*'},{
                 withCredentials: true,
             }).then(res => {
@@ -298,7 +298,7 @@ export default class PlayingScene extends Phaser.Scene {
         }
         axios.defaults.withCredentials = true;
         axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
-        axios('http://localhost:7777/player' ,
+        axios('http://10.188.191.212:7777/player' ,
             {},{
             }).then(res => {
             this.treatData(res.data)
@@ -314,7 +314,7 @@ export default class PlayingScene extends Phaser.Scene {
             setTimeout(() => resolve("완료!"), 1000)
         });
         let result = await promise; // 프라미스가 이행될 때까지 기다림 (*)
-        axios.post('http://localhost:7777/player/save' ,{
+        axios.post('http://10.188.191.212:7777/player/save' ,{
             "nickname" : this.m_player.name,
             "point" : {
                 "x" : this.m_player.getCenter().x,
@@ -345,7 +345,7 @@ export default class PlayingScene extends Phaser.Scene {
         });
         this.m_player.setPosition(800,800)
         ***/
-        axios.post('http://localhost:7777/player/create_userName' ,{
+        axios.post('http://10.188.191.212:7777/player/create_userName' ,{
             "point" : {
                 "x" : this.m_player.x,
                 "y" : this.m_player.y
@@ -420,7 +420,7 @@ export default class PlayingScene extends Phaser.Scene {
     getMarker(){
         if(this.counter%50 !== 1)
             return
-        axios('http://localhost:7777/marker/all' ,
+        axios('http://10.188.191.212:7777/marker/all' ,
             {},{
             }).then(res => {
             let markers = JSON.parse(JSON.stringify(res.data))
