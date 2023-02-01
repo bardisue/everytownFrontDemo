@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <style>
+
+        .wrappedDiv{
+            background-image: url("src/assets/text/back.png");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 750px;
+            height: 800px;
+            margin-left: 25%;
+            margin-top: 30px;
+        }
+
+        .closeButtonDiv{
+            float: right;
+        }
+
+        .closeButton{
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center; /* 가로 - 중앙으로 */
+            justify-content: center; /* 세로 - 상단으로 */
+            width: 100px;
+            height: 30px;
+            margin-top: 60px;
+            margin-right: 50px;
+            font-size: 2em;
+        }
+
+        .titleDiv{
+            text-align: center;
+        }
+
+        .title{
+            margin-top: 10px;
+            margin-left: 15px;
+            width: 600px;
+            display: inline-block;
+            resize: none;
+            background-color: transparent;
+            border: 1px solid burlywood;
+            font-size: 30px;
+            font-family: 'Black Han Sans', sans-serif;
+            resize: none;
+            overflow: hidden;
+
+        }
+
+        .contentsDiv{
+            text-align: center;
+        }
+
+        .contents{
+            margin-bottom: 10px;
+            margin-left: 15px;
+            width: 600px;
+            height: 500px;
+            display: inline-flex;
+            justify-content: center;
+            overflow: scroll;
+            resize: none;
+            background-color: transparent;
+            border: 1px solid burlywood;
+            font-size: 3em;
+            font-family: 'Black Han Sans', sans-serif;
+        }
+
+        .sendButtonDiV {
+            float: right;
+        }
+
+        .sendButton{
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center; /* 가로 - 중앙으로 */
+            justify-content:center; /* 세로 - 상단으로 */
+            width: 100px;
+            height: 30px;
+            font-size: 2em;
+            margin-right: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="wrappedDiv">
+
+        <div class="closeButtonDiv">
+            <input type="button" value="X" class="closeButton">
+        </div>
+
+        <div class="titleDiv">
+            <textarea class="title" maxlength="25" name="title" ></textarea>
+        </div>
+
+        <div class="contentsDiv">
+            <textarea class="contents" name="content"></textarea>
+        </div>
+
+        <div class="sendButtonDiV">
+            <input type="submit" value="send" class="sendButton" name="submitButton">
+        </div>
+
+    </div>
+</body>
+</html>
